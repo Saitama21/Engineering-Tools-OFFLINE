@@ -5,3 +5,18 @@ body.light{--bg:#dce9f5;--bg2:#f4f8fc;--text:#0a1727;--muted:#53677d;--line:rgba
 @media(min-width:700px){.tools-grid{grid-template-columns:repeat(3,1fr)}.tool-card{min-height:190px}.app-shell{padding-left:24px;padding-right:24px}}
 @media(max-width:370px){.app-shell{padding-left:12px;padding-right:12px}.tools-grid{gap:10px}.tool-card{padding:14px;min-height:165px}.tool-card h2{font-size:16px}.dock{width:calc(100% - 14px)}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* UI_CONTRACT_DOCK_V1 — Safari-independent dock */
+
+:root{--dock-bottom:7px;--dock-width:95%;--dock-height:68px}
+@media (min-width:390px) and (max-width:430px){:root{--dock-bottom:2px;--dock-width:87%;--dock-height:68px}}
+.dock{
+  position:fixed!important;
+  left:50%!important;
+  right:auto!important;
+  bottom:var(--dock-bottom)!important;
+  width:min(var(--dock-width),640px)!important;
+  height:var(--dock-height)!important;
+  transform:translateX(-50%)!important;
+}
